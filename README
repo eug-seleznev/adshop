@@ -17,9 +17,9 @@ Product model
 Controllets
 
 - [x] add new Product
-- [ ] update Product
+- [x] update Product info
 - [x] Get all  Products
-- [ ] Get product by title
+- [x] Get product by title
 - [ ] delete Product
 - [ ] update quantity (buy route)
 
