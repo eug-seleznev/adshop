@@ -2,7 +2,7 @@ import express, { Application, Request, Response, NextFunction } from "express";
 import bodyParser from "body-parser"
 import connect from './connect'
 import Prod from './models/product'
-
+import productRoute from './routes/product'
 const app: Application = express();
 
 
@@ -21,8 +21,12 @@ app.get("/", (req: Request, res: Response, next: NextFunction) => {
     res.send('hello world')
 })
 
+app.get('/test', (req, res) => res.send('products'))
 
-app.use('/prod', require('./routes/prod'));
+// app.use(productRoute);
+
+
+app.use('/product', productRoute);
 
 
 app.listen(port, () => {

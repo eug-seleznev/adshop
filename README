@@ -1,1 +1,26 @@
 dont't like opencart meh
+
+
+
+TODO
+--------
+
+Product model 
+- title
+- about
+- price
+- quantity
+
+
+
+
+Controllets
+
+- [x] add new Product
+- [ ] update Product
+- [x] Get all  Products
+- [ ] Get product by title
+- [ ] delete Product
+- [ ] update quantity (buy route)
+
+

@@ -14,5 +14,5 @@ export interface ProductInterface extends Document {
 
   });
   
-  const Prod = mongoose.model<ProductInterface>("Test",  Product);
+  const Prod = mongoose.model<ProductInterface>("Product",  Product);
   export default Prod;
