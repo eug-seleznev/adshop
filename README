@@ -13,14 +13,18 @@ Product model
 
 
 
-
 Controllets
 
 - [x] add new Product
 - [x] update Product info
 - [x] Get all  Products
 - [x] Get product by title
-- [ ] delete Product
-- [ ] update quantity (buy route)
+- [x] delete Product
+- [x] update quantity (buy route)
+
+--------------------------
+
+- [ ] User model
+- [ ] AUTH
 
 

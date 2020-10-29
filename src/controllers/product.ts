@@ -39,19 +39,16 @@ export const addProduct = async (req: Request, res: Response): Promise<void> => 
 
   export const updateProduct = async (req: Request, res: Response): Promise<void> => {
     try {
-      //const {params: {id}, body} = req;
-      console.log(req.params, 'params')
-console.log(req.body, 'body')
 
-const updateProd: ProductInterface | null = await Product.findOneAndUpdate({title: req.body.title}, req.body)
-const allProducts: ProductInterface[] = await Product.find();
+    const updateProd: ProductInterface | null = await Product.findOneAndUpdate({title: req.body.title}, req.body)
+    const allProducts: ProductInterface[] = await Product.find();
 
 
-res.json({
-  message: 'Product updated',
-  product: updateProd,
-  products: allProducts
-})
+    res.json({
+      message: 'Product updated',
+      product: updateProd,
+      products: allProducts
+    })
 
 
     } catch (error) {
@@ -63,7 +60,7 @@ res.json({
 
 export const getProductByTitle = async (req: Request, res: Response): Promise<void> => {
   try {
-    const product: ProductInterface | null = await Product.findOne({title: req.body.title});
+    const product: ProductInterface | null = await Product.findOne({title: req.params.id});
     res.json({
       message: "Product",
       product: product
@@ -76,8 +73,14 @@ export const getProductByTitle = async (req: Request, res: Response): Promise<vo
 
 export const  buyProduct = async (req: Request, res: Response): Promise<void> => {
   try {
-      //find one and update
-      //quantity - 1
+    const product: ProductInterface | null = await Product.findOneAndUpdate({title: req.params.id}, {$inc: {quantity: -1}} ) 
+
+    const updateProd: ProductInterface | null = await Product.findOne({title: req.params.id})
+
+    res.json({
+      message: "success buy",
+      product: updateProd
+    })
   } catch (error) {
     throw error
   }
